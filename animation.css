@@ -1,0 +1,74 @@
+/* KEYFRAMES */
+@keyframes slideLeft {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft-2 {
+  from {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(20deg);
+  }
+
+  100% {
+    transform: rotateY(-20deg);
+  }
+}
+
+/* CLASS */
+.anim-slide-1 {
+  animation: slideLeft 1s ease-out;
+}
+.anim-slide-2 {
+  animation: slideLeft-2 1.5s ease-out;
+}
+
+.anim-pulse-slow {
+  animation: pulse 4s infinite;
+}
+
+.anim-pulse-fast {
+  animation: pulse 2.5s infinite;
+}
+
+.anim-fade-rotate {
+  animation: rotate 5s infinite, fade-in 2s ease-in;
+}
