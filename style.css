@@ -1,27 +1,59 @@
+/* Define as configurações para telas pequenas */
+@media (max-width: 576px) {
+  /* Adicione aqui as configurações para telas pequenas */
+}
+
+/* Define as configurações para telas médias */
+@media (min-width: 576px) and (max-width: 768px) {
+  /* Adicione aqui as configurações para telas médias */
+}
+
+/* Define as configurações para telas grandes */
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Adicione aqui as configurações para telas grandes */
+}
+
+/* Define as configurações para telas extra grandes */
+@media (min-width: 992px) {
+  /* Adicione aqui as configurações para telas extra grandes */
+}
+
+/* VARIAVEIS DAS CORES */
+:root {
+  --bg-color: #3d4350;
+  --accent-color: greenyellow;
+  --title-color: #d9e3dd;
+  --text-color: #ffffff;
+  /* color: var(--text-color);*/
+}
+
+/* CONFIGURAÇÕES DA PAGINA */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Titillium Web", sans-serif;
+  color: #d9e3dd;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* ------------ SECTION HOME ------------ */
+/* ------------ NAVBAR ------------ */
+
 /* Links - Hamburguer Menu */
+li {
+  list-style: none;
+  position: relative;
+  padding: 3px 10px;
+}
 header {
   background-color: #303338;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1;
-}
-li {
-  list-style: none;
-  position: relative;
-  padding: 3px 10px;
 }
 .navbar {
   min-height: 60px;
@@ -48,6 +80,8 @@ li {
   background-color: white;
   transition: all 0.3s ease-in-out;
 }
+
+/* Ativa menu de hamburguer com tela fica menor */
 @media (max-width: 768px) {
   .hamburguer {
     display: block;
@@ -80,19 +114,10 @@ li {
   .nav-menu.active {
     right: 0;
   }
-  h1 {
-    font-size: 2.5rem !important;
-  }
-  h2 {
-    font-size: 2rem !important;
-  }
-  .p {
-    font-size: 1rem !important;
-  }
 }
 
 /* Logo config */
-p {
+.logoText {
   overflow: hidden;
   display: flex;
   font-size: 2rem;
@@ -100,15 +125,14 @@ p {
   font-weight: 700;
   color: white;
 }
-.de {
+.logoDe {
   color: greenyellow;
 }
-
-p:hover span {
+.logoText:hover span {
   opacity: 1;
   margin-right: 5px;
 }
-p span {
+.logoText span {
   transition: all 0.3s ease-out;
   width: 0;
   opacity: 0;
@@ -138,18 +162,6 @@ a:hover::after {
 }
 
 /* ------------ SECTION HOME ------------ */
-@media (min-width: 768px) {
-  #home,
-  section {
-    height: 100vh;
-  }
-}
-@media (max-height: 560px) {
-  #home,
-  section {
-    height: 100%;
-  }
-}
 
 #home {
   display: flex;
@@ -158,105 +170,65 @@ a:hover::after {
   justify-content: space-evenly;
 }
 
+section {
+  height: 100vh;
+}
 .presentation {
-  padding: 2%;
+  padding: 5% 5%;
+}
+@media (min-width: 768px) {
+  .presentation {
+    width: 50%;
+    height: 70%;
+    display: flex; /* torna a div um container flexível */
+    align-items: center; /* alinha o conteúdo verticalmente ao centro */
+    justify-content: center; /* alinha o conteúdo horizontalmente ao centro */
+    padding: 0;
+  }
+
+  .imgPresentation {
+    width: 40%;
+    height: 70%;
+    display: flex; /* torna a div um container flexível */
+    align-items: center; /* alinha o conteúdo verticalmente ao centro */
+    justify-content: center; /* alinha o conteúdo horizontalmente ao centro */
+  }
+}
+
+img {
+  max-width: 100%; /* define a largura máxima da imagem como 100% */
+  max-height: 100%; /* define a altura máxima da imagem como 100% */
 }
 
 h1 {
   color: greenyellow;
-  font-size: 4rem;
+  font-size: 4vw;
 }
 
 h2 {
-  color: #d9e3dd;
-  font-size: 3.5rem;
+  font-size: 3.5vw;
 }
 
-h3 {
-  color: #ffffff;
-  display: inline-block;
-  position: absolute;
-  font-size: 3rem;
+p {
+  font-size: 1.8vw;
 }
 
-.p {
-  color: #d9e3dd;
-  font-size: 1.8rem;
-}
-
-/* Configuração da div das linguagens */
-@media (max-width: 1020px) {
-  .panel-skills {
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px; /* tamanho mínimo */
+  }
+  h2 {
+    font-size: 24px; /* tamanho mínimo */
+  }
+  p {
+    font-size: 20px; /* tamanho mínimo */
+  }
+  .imgPresentation {
     display: none;
   }
-  body {
+  h1,
+  h2,
+  p {
     text-align: center;
   }
-}
-
-.panel-skills {
-  width: 500px;
-  height: 600px;
-  position: relative;
-}
-.panel-s2 {
-  font-size: 2vw;
-}
-.s-html {
-  text-shadow: 0 0 20px #dd4b25;
-  left: 30%;
-  top: 5%;
-}
-.s-css {
-  text-shadow: 0 0 20px #2091eb;
-  left: 5%;
-  top: 25%;
-}
-.s-js {
-  text-shadow: 0 0 20px #e8d44d;
-  left: 50%;
-  top: 70%;
-}
-.s-cSharp {
-  text-shadow: 0 0 20px #964d92;
-  left: 20%;
-  top: 55%;
-}
-.s-bootstrap {
-  text-shadow: 0 0 20px #5c2d91;
-  left: 15%;
-  top: 85%;
-}
-.s-jQuery {
-  text-shadow: 0 0 20px #094b7a, 0 0 10px #ffffff;
-  left: 70%;
-  top: 35%;
-}
-.s-node {
-  text-shadow: 0 0 20px #8bbf3d;
-  left: 40%;
-  top: 45%;
-}
-.s-unity {
-  text-shadow: 0 0 20px #4b4b4b, 0 0 10px #ffffff;
-  left: 40%;
-  top: 25%;
-}
-
-/* ------------ SECTION ABOUT ------------ */
-
-.pages {
-  min-width: 320;
-  max-width: 800;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.pagecolor1 {
-  background-color: #565d6b;
-}
-.pagecolor2 {
-  background-color: #3d4350;
 }
