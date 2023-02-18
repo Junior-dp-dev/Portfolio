@@ -291,6 +291,23 @@ p {
     align-items: center;
     justify-content: center;
   }
+
+  #home {
+    height: 100vh;
+    min-height: 768px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-box {
+    width: 50%;
+  }
+  #about {
+    padding: 5% 2%;
+  }
+}
+
+@media (min-width: 1028px) {
   section {
     height: 100vh;
     min-height: 768px;
