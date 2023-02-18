@@ -1,29 +1,19 @@
-/* Define as configurações para telas pequenas */
+/* Define as configurações para telas pequenas
 @media (max-width: 576px) {
-  /* Adicione aqui as configurações para telas pequenas */
-}
-
-/* Define as configurações para telas médias */
+Define as configurações para telas médias
 @media (min-width: 576px) and (max-width: 768px) {
-  /* Adicione aqui as configurações para telas médias */
-}
-
-/* Define as configurações para telas grandes */
+Define as configurações para telas grandes
 @media (min-width: 768px) and (max-width: 992px) {
-  /* Adicione aqui as configurações para telas grandes */
-}
-
-/* Define as configurações para telas extra grandes */
-@media (min-width: 992px) {
-  /* Adicione aqui as configurações para telas extra grandes */
-}
+Define as configurações para telas extra grandes
+@media (min-width: 992px) */
 
 /* VARIAVEIS DAS CORES */
 :root {
-  --bg-color: #3d4350;
-  --accent-color: greenyellow;
-  --title-color: #d9e3dd;
-  --text-color: #ffffff;
+  --bg-primary: #3d4350;
+  --bg-secondary: #505868;
+  --navbar-menu: #303338;
+  --highlighted-text: #adff2f;
+  --normal-text: #ffffff;
   /* color: var(--text-color);*/
 }
 
@@ -33,15 +23,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Titillium Web", sans-serif;
-  color: #d9e3dd;
+  color: var(--normal-text);
 }
-
 html {
   scroll-behavior: smooth;
 }
 
 /* ------------ NAVBAR ------------ */
-
 /* Links - Hamburguer Menu */
 li {
   list-style: none;
@@ -49,7 +37,7 @@ li {
   padding: 3px 10px;
 }
 header {
-  background-color: #303338;
+  background-color: var(--navbar-menu);
   position: fixed;
   width: 100%;
   top: 0;
@@ -65,7 +53,7 @@ header {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 3vw;
 }
 .hamburguer {
   display: none;
@@ -77,12 +65,134 @@ header {
   height: 3px;
   border-radius: 2px;
   margin: 5px auto;
-  background-color: white;
+  background-color: var(--normal-text);
   transition: all 0.3s ease-in-out;
 }
+/* Logo config */
+.logoText {
+  overflow: hidden;
+  display: flex;
+  font-size: 1.8rem;
+  user-select: none;
+  font-weight: 700;
+  color: var(--normal-text);
+}
+.logoDe {
+  color: var(--highlighted-text);
+}
+.logoText:hover span {
+  opacity: 1;
+  margin-right: 5px;
+}
+.logoText span {
+  transition: all 0.3s ease-out;
+  width: 0;
+  opacity: 0;
+  display: inline-flex;
+  overflow: hidden;
+}
+/* Underline Hover */
+a {
+  text-decoration: none;
+  color: var(--normal-text);
+}
+a::after {
+  content: "";
+  position: absolute;
+  background-color: var(--highlighted-text);
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 0.2s;
+}
+a:hover::after {
+  width: 100%;
+}
 
-/* Ativa menu de hamburguer com tela fica menor */
+/* ------------ SECTION HOME ------------ */
+#home {
+  display: flex;
+  background-color: var(--bg-primary);
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+.presentation {
+  padding: 5% 5%;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 50px;
+}
+h1 {
+  color: var(--highlighted-text);
+  font-size: 4vw;
+}
+h2 {
+  font-size: 3.5vw;
+}
+p {
+  font-size: 1.8vw;
+}
+/* KEYFRAMES */
+@keyframes anim-slideLeft {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.anim-slide {
+  animation: anim-slideLeft 1s ease-out;
+}
+
+/* ------------ SECTION ABOUT ------------ */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+.about-box-top {
+  width: 90%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-box {
+  width: 25%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+.large-icon {
+  font-size: 8vw;
+  padding: 10%;
+}
+#about h1 {
+  font-size: 3.5rem;
+}
+#about h2 {
+  color: var(--highlighted-text);
+  font-size: 2.8rem;
+}
+#about p {
+  font-size: 1.8vw;
+}
+
+/* ----------------------------------------------- MEDIA QUERIES ----------------------------------------------- */
 @media (max-width: 768px) {
+  /* ------------ CONFIGURAÇÃO DA BARRA HAMBURGUER E NAVBAR ------------ */
   .hamburguer {
     display: block;
   }
@@ -101,7 +211,7 @@ header {
     top: 60px;
     gap: 0;
     border-radius: 0 0 20px 20px;
-    background-color: rgba(48, 51, 56, 0.5);
+    background-color: #30333880;
     backdrop-filter: blur(6px);
     text-align: center;
     flex-direction: column;
@@ -114,115 +224,16 @@ header {
   .nav-menu.active {
     right: 0;
   }
-}
 
-/* Logo config */
-.logoText {
-  overflow: hidden;
-  display: flex;
-  font-size: 2rem;
-  user-select: none;
-  font-weight: 700;
-  color: white;
-}
-.logoDe {
-  color: greenyellow;
-}
-.logoText:hover span {
-  opacity: 1;
-  margin-right: 5px;
-}
-.logoText span {
-  transition: all 0.3s ease-out;
-  width: 0;
-  opacity: 0;
-  display: inline-flex;
-  overflow: hidden;
-}
-
-/* Underline Hover */
-a {
-  text-decoration: none;
-  color: white;
-}
-a::after {
-  content: "";
-  position: absolute;
-  background-color: greenyellow;
-  margin: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  transition: all 0.2s;
-}
-a:hover::after {
-  width: 100%;
-}
-
-/* ------------ SECTION HOME ------------ */
-
-#home {
-  display: flex;
-  background-color: #3d4350;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-section {
-  height: 100vh;
-}
-.presentation {
-  padding: 5% 5%;
-}
-@media (min-width: 768px) {
-  .presentation {
-    width: 50%;
-    height: 70%;
-    display: flex; /* torna a div um container flexível */
-    align-items: center; /* alinha o conteúdo verticalmente ao centro */
-    justify-content: center; /* alinha o conteúdo horizontalmente ao centro */
-    padding: 0;
-  }
-
-  .imgPresentation {
-    width: 40%;
-    height: 70%;
-    display: flex; /* torna a div um container flexível */
-    align-items: center; /* alinha o conteúdo verticalmente ao centro */
-    justify-content: center; /* alinha o conteúdo horizontalmente ao centro */
-  }
-}
-
-img {
-  max-width: 100%; /* define a largura máxima da imagem como 100% */
-  max-height: 100%; /* define a altura máxima da imagem como 100% */
-  border-radius: 50px;
-}
-
-h1 {
-  color: greenyellow;
-  font-size: 4vw;
-}
-
-h2 {
-  font-size: 3.5vw;
-}
-
-p {
-  font-size: 1.8vw;
-}
-
-@media (max-width: 768px) {
+  /* ------------ CONFIGURAÇÃO DAS FONTES HOME ------------ */
   h1 {
-    font-size: 28px; /* tamanho mínimo */
+    font-size: 28px;
   }
   h2 {
-    font-size: 24px; /* tamanho mínimo */
+    font-size: 24px;
   }
   p {
-    font-size: 20px; /* tamanho mínimo */
+    font-size: 20px;
   }
   .imgPresentation {
     display: none;
@@ -231,5 +242,49 @@ p {
   h2,
   p {
     text-align: center;
+  }
+
+  /* ------------ CONFIGURAÇÃO DA PAGINA ABOUT ------------ */
+  #about {
+    flex-direction: column;
+  }
+  .about-box-top {
+    width: 100%;
+    height: 70%;
+    padding: 10%;
+  }
+  .about-box {
+    width: 100%;
+    height: 70%;
+    padding-bottom: 10%;
+  }
+  #about p {
+    font-size: 20px;
+  }
+  .large-icon {
+    font-size: 80px;
+    padding: 5%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* ------------ CONFIGURAÇÃO DA APRESENTAÇÃO HOME ------------ */
+  .presentation {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .imgPresentation {
+    width: 40%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #about {
+    height: 100vh;
   }
 }
