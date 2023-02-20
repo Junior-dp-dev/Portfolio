@@ -33,12 +33,12 @@ document.addEventListener("mouseout", (event) => mouseOutHandle(event));
 document.removeEventListener("mouseover", (event) => mouseEnterHandle(event));
 document.removeEventListener("mouseout", (event) => mouseOutHandle(event));
 
+/* Configuração do Card das Habilidades*/
 const cards = document.querySelectorAll(".card");
 const cardHidden = document.querySelector(".card-hidden");
 const cardHiddenTitle = cardHidden.querySelector(".title");
 const cardHiddenText = cardHidden.querySelector(".text");
 const cardHiddenImage = cardHidden.querySelector(".image");
-
 const technologies = [
   { title: "HTML", text: "É uma linguagem de marcação usada para criar a estrutura e o conteúdo das páginas da web." },
   { title: "CSS", text: "É uma linguagem usada para estilizar e formatar a apresentação do conteúdo em páginas web." },
