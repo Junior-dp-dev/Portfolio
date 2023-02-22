@@ -29,6 +29,14 @@ html {
   scroll-behavior: smooth;
 }
 
+footer {
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+footer p {
+  font-size: 16px;
+}
+
 /* ------------ NAVBAR ------------ */
 /* Links - Hamburguer Menu */
 li {
