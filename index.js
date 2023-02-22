@@ -76,9 +76,11 @@ copyButton.addEventListener("click", function () {
     .then(function () {
       messageContainer.innerText = "Copy";
       messageContainer.style.display = "block";
+      copyButton.style.display = "none";
       setTimeout(function () {
         messageContainer.style.display = "none";
-      }, 1000);
+        copyButton.style.display = "block";
+      }, 500);
     })
     .catch(function () {
       console.error("Falha ao copiar texto.");
