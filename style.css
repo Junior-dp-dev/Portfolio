@@ -14,7 +14,9 @@ Define as configurações para telas extra grandes
   --navbar-menu: #303338;
   --highlighted-text: #adff2f;
   --normal-text: #ffffff;
-  /* color: var(--text-color);*/
+  --linkedin-color: #0077b5;
+  --github-color: #28a745;
+  --email-color: red;
 }
 
 /* CONFIGURAÇÕES DA PAGINA */
@@ -268,8 +270,8 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 500px;
-  height: 600px;
+  width: 600px;
+  height: 700px;
   overflow: hidden; /* oculta o conteúdo que exceder a altura máxima */
   border-radius: 10px;
   padding: 30px;
@@ -340,10 +342,10 @@ p {
   margin: 10px;
 }
 .linkedin {
-  border-color: #5195cc;
+  border-color: var(--linkedin-color);
 }
 .github {
-  border-color: #a551cc;
+  border-color: var(--github-color);
 }
 .email-container {
   font-size: 1rem;
@@ -351,7 +353,7 @@ p {
   border-style: solid;
   border-color: greenyellow;
   color: #ffffff;
-  width: 300px;
+  width: 320px;
   height: 80px;
   border-radius: 10px;
   transition: 0.2s;
@@ -367,14 +369,14 @@ p {
   font-size: 36px;
 }
 .linkedin:hover {
-  background-color: #5195cc;
+  background-color: var(--linkedin-color);
   letter-spacing: 0.1em;
-  box-shadow: 0 0 35px #5195cc;
+  box-shadow: 0 0 35px var(--linkedin-color);
 }
 .github:hover {
-  background-color: #a551cc;
+  background-color: var(--github-color);
   letter-spacing: 0.1em;
-  box-shadow: 0 0 35px #a551cc;
+  box-shadow: 0 0 35px var(--github-color);
 }
 #copy-button {
   border: none;

@@ -84,3 +84,11 @@ copyButton.addEventListener("click", function () {
       console.error("Falha ao copiar texto.");
     });
 });
+
+copyButton.addEventListener("mouseover", function () {
+  textToCopy.style.fontSize = "larger";
+});
+
+copyButton.addEventListener("mouseout", function () {
+  textToCopy.style.fontSize = "initial";
+});
