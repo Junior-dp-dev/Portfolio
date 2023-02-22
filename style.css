@@ -312,16 +312,82 @@ p {
 /* ------------ CONFIGURAÇÃO DA PAGINA CONTATO ------------ */
 #contact {
   background-color: var(--bg-primary);
-}
-.paragrafo-container {
-  width: 200px;
+  min-height: 300px;
   height: auto;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5% 0;
+}
+#contact h1 {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 3%;
+}
+.btn-contact {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-style: solid;
+  color: #ffffff;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+  transition: 0.2s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+}
+.linkedin {
+  border-color: #5195cc;
+}
+.github {
+  border-color: #a551cc;
+}
+.email-container {
+  font-size: 1rem;
+  font-weight: bold;
+  border-style: solid;
+  border-color: greenyellow;
+  color: #ffffff;
+  width: 300px;
+  height: 80px;
+  border-radius: 10px;
+  transition: 0.2s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#contact i {
+  font-size: 30px;
+}
+.btn-contact span {
+  font-size: 36px;
+}
+.linkedin:hover {
+  background-color: #5195cc;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 35px #5195cc;
+}
+.github:hover {
+  background-color: #a551cc;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 35px #a551cc;
 }
 #copy-button {
   border: none;
   background-color: transparent;
+}
+#copy-button:hover {
+  transform: scale(1.2);
+}
+
+.copy-icon:hover {
+  color: #adff2f;
+  text-shadow: 0 0 35px greenyellow;
+  cursor: copy;
 }
 #message-container:before {
   content: "";
@@ -367,11 +433,7 @@ p {
   }
 
   /* ------------ CONFIGURAÇÃO DA APRESENTAÇÃO HOME ------------ */
-  section {
-    padding-top: 20%;
-    padding-bottom: 10%;
-    padding: 20% 5% 10% 5%;
-  }
+
   .imgPresentation {
     display: none;
   }

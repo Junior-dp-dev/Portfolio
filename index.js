@@ -74,11 +74,11 @@ copyButton.addEventListener("click", function () {
   navigator.clipboard
     .writeText(textToCopy.innerText)
     .then(function () {
-      messageContainer.innerText = "Texto copiado com sucesso!";
+      messageContainer.innerText = "Copy";
       messageContainer.style.display = "block";
       setTimeout(function () {
         messageContainer.style.display = "none";
-      }, 2000);
+      }, 1000);
     })
     .catch(function () {
       console.error("Falha ao copiar texto.");
