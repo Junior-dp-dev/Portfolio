@@ -64,3 +64,23 @@ cards.forEach((card) => {
 cardHidden.addEventListener("click", () => {
   cardHidden.style.display = "none";
 });
+
+//Contato
+const copyButton = document.getElementById("copy-button");
+const textToCopy = document.querySelector("#email");
+const messageContainer = document.getElementById("message-container");
+
+copyButton.addEventListener("click", function () {
+  navigator.clipboard
+    .writeText(textToCopy.innerText)
+    .then(function () {
+      messageContainer.innerText = "Texto copiado com sucesso!";
+      messageContainer.style.display = "block";
+      setTimeout(function () {
+        messageContainer.style.display = "none";
+      }, 2000);
+    })
+    .catch(function () {
+      console.error("Falha ao copiar texto.");
+    });
+});
