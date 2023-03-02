@@ -43,6 +43,8 @@ const technologies = [
   { title: "HTML", text: "É uma linguagem de marcação usada para criar a estrutura e o conteúdo das páginas da web." },
   { title: "CSS", text: "É uma linguagem usada para estilizar e formatar a apresentação do conteúdo em páginas web." },
   { title: "JavaScript", text: "É uma linguagem de programação versátil usada para criar aplicativos, interagir com páginas da web e muito mais." },
+  { title: "React", text: "É uma biblioteca JavaScript para criação de interfaces de usuário declarativas, reutilizáveis e eficientes em atualizações." },
+  { title: "TypeScript", text: "É um superset de JavaScript que adiciona recursos de tipagem estática ao código, tornando-o mais robusto e escalável." },
   { title: "Node", text: "É uma plataforma de tempo de execução do JavaScript usada para construir aplicativos web escaláveis do lado do servidor." },
   { title: "C#", text: "É uma linguagem de programação orientada a objetos usada principalmente para desenvolver aplicativos do Windows e jogos." },
   { title: "Unity", text: "É um motor de jogo multiplataforma usado para criar jogos 2D e 3D, com ferramentas poderosas." },

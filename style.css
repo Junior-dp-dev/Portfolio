@@ -236,9 +236,7 @@ p {
   justify-content: center;
   transition: 0.1s ease-in-out;
 }
-.card-skill img {
-  filter: grayscale(100%);
-}
+
 .card-skill:hover {
   transform: scale(1.2);
   background-color: rgba(43, 49, 83, 0.7);
